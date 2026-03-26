@@ -1,0 +1,50 @@
+# Streaming & Messaging
+confluent-kafka==2.3.0
+kafka-python==2.0.2
+
+# Big Data Processing
+pyspark==3.5.0
+pyarrow==14.0.1
+
+# Graph Neural Networks
+torch==2.1.2
+torch-geometric==2.4.0
+torch-scatter==2.1.2
+torch-sparse==0.6.18
+
+# Storage
+cassandra-driver==3.29.0
+elasticsearch==8.11.0
+
+# Web Framework
+fastapi==0.109.0
+uvicorn[standard]==0.27.0
+pydantic==2.5.3
+pydantic-settings==2.1.0
+
+# Data & Utilities
+numpy==1.26.3
+pandas==2.1.4
+scikit-learn==1.4.0
+scipy==1.11.4
+PyYAML==6.0.1
+python-dotenv==1.0.0
+
+# Scheduling
+APScheduler==3.10.4
+
+# Monitoring
+tensorboard==2.15.1
+
+# HTTP Client
+httpx==0.26.0
+requests==2.31.0
+
+# Testing
+pytest==7.4.4
+pytest-asyncio==0.23.3
+pytest-mock==3.12.0
+
+# Code Quality
+black==23.12.1
+isort==5.13.2

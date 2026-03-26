@@ -1,0 +1,70 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "ed-congestion-forecast"
+version = "1.0.0"
+description = "Graph-Aware Contextual Deep Learning for Real-Time ED Congestion Forecasting"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+keywords = ["emergency-department", "deep-learning", "graph-neural-network", "big-data", "forecasting"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+dependencies = [
+  "fastapi>=0.109",
+  "uvicorn[standard]>=0.27",
+  "pydantic>=2.5",
+  "pydantic-settings>=2.1",
+  "numpy>=1.26",
+  "scipy>=1.11",
+  "PyYAML>=6.0",
+  "python-dotenv>=1.0",
+  "httpx>=0.26",
+]
+
+[project.optional-dependencies]
+ml = [
+  "torch>=2.1",
+  "torch-geometric>=2.4",
+]
+streaming = [
+  "confluent-kafka>=2.3",
+  "pyspark>=3.5",
+  "cassandra-driver>=3.29",
+  "elasticsearch>=8.11",
+  "APScheduler>=3.10",
+]
+dev = [
+  "pytest>=7.4",
+  "pytest-asyncio>=0.23",
+  "pytest-mock>=3.12",
+  "black>=23.12",
+  "isort>=5.13",
+]
+
+[project.scripts]
+ed-forecast = "main:main"
+
+[tool.setuptools.packages.find]
+exclude = ["tests*", "checkpoints*", "runs*"]
+
+[tool.black]
+line-length = 100
+target-version = ["py311"]
+
+[tool.isort]
+profile = "black"
+line_length = 100
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"

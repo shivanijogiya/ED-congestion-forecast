@@ -1,0 +1,17 @@
+feature_dim:   10
+gnn_hidden:    32
+gnn_out:       64
+gnn_heads:     4
+lstm_hidden:   128
+lstm_layers:   2
+attn_heads:    8
+num_horizons:  4
+horizon_hours: [1, 2, 4, 8]
+dropout:       0.2
+weight_decay:  0.0001
+learning_rate: 0.001
+batch_size:    32
+max_epochs:    100
+patience:      10
+grad_clip:     1.0
+sequence_len:  24

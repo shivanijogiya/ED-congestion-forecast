@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ED Congestion Forecasting</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+
+<!-- ── HEADER ──────────────────────────────────────────────────────────────── -->
+<header>
+  <div class="header-left">
+    <div class="logo">🏥</div>
+    <div>
+      <h1>ED Congestion Forecasting</h1>
+      <p class="subtitle">Graph-Aware Deep Learning · Real-Time · 6 Hospitals</p>
+    </div>
+  </div>
+  <div class="header-right">
+    <div class="live-pill">
+      <span class="pulse-dot"></span> LIVE
+    </div>
+    <div class="clock" id="clock">--:--:--</div>
+  </div>
+</header>
+
+<!-- ── SYSTEM HEALTH BAR ───────────────────────────────────────────────────── -->
+<div class="health-bar" id="healthBar">
+  <div class="health-item"><span class="dot green"></span>Kafka</div>
+  <div class="health-item"><span class="dot green"></span>Cassandra</div>
+  <div class="health-item"><span class="dot green"></span>Elasticsearch</div>
+  <div class="health-item"><span class="dot green"></span>Spark</div>
+  <div class="health-item"><span class="dot green"></span>Model v1.0.0</div>
+  <div class="health-item muted">MAE: <strong id="maeVal">--</strong></div>
+  <div class="health-item muted">Lag: <strong>42 msgs</strong></div>
+</div>
+
+<!-- ── MAIN LAYOUT ─────────────────────────────────────────────────────────── -->
+<main>
+
+  <!-- LEFT PANEL: Hospital cards -->
+  <section class="panel-left">
+    <div class="section-title">
+      <span>Hospitals Overview</span>
+      <button class="refresh-btn" onclick="loadAllHospitals()">⟳ Refresh</button>
+    </div>
+    <div class="hospital-grid" id="hospitalGrid">
+      <!-- Cards injected by JS -->
+    </div>
+  </section>
+
+  <!-- RIGHT PANEL: Detail view -->
+  <section class="panel-right" id="detailPanel">
+    <div class="detail-placeholder" id="placeholder">
+      <div class="placeholder-icon">👆</div>
+      <p>Select a hospital to view<br/>department-level forecasts</p>
+    </div>
+
+    <!-- Detail content (hidden until hospital selected) -->
+    <div id="detailContent" class="hidden">
+
+      <div class="detail-header">
+        <div>
+          <h2 id="detailHospitalName">--</h2>
+          <p class="detail-sub">Department Congestion Forecast</p>
+        </div>
+        <div id="detailBadge" class="severity-badge">--</div>
+      </div>
+
+      <!-- Context signals -->
+      <div class="context-row" id="contextRow">
+        <div class="context-card" id="ctx-weather">
+          <div class="ctx-icon">🌦️</div>
+          <div class="ctx-label">Weather</div>
+          <div class="ctx-val" id="ctxWeather">--</div>
+        </div>
+        <div class="context-card" id="ctx-flu">
+          <div class="ctx-icon">🦠</div>
+          <div class="ctx-label">Flu Index</div>
+          <div class="ctx-val" id="ctxFlu">--</div>
+        </div>
+        <div class="context-card" id="ctx-traffic">
+          <div class="ctx-icon">🚗</div>
+          <div class="ctx-label">Traffic</div>
+          <div class="ctx-val" id="ctxTraffic">--</div>
+        </div>
+        <div class="context-card" id="ctx-max">
+          <div class="ctx-icon">📊</div>
+          <div class="ctx-label">Peak Congestion</div>
+          <div class="ctx-val" id="ctxPeak">--</div>
+        </div>
+      </div>
+
+      <!-- Forecast chart -->
+      <div class="chart-box">
+        <div class="chart-title">4-Horizon Forecast per Department</div>
+        <div class="chart-wrap">
+          <canvas id="forecastChart"></canvas>
+        </div>
+      </div>
+
+      <!-- Department cards -->
+      <div class="section-title" style="margin-top:20px">
+        <span>Department Detail</span>
+      </div>
+      <div class="dept-grid" id="deptGrid"></div>
+
+      <!-- History chart -->
+      <div class="chart-box" style="margin-top:20px">
+        <div class="chart-title">24-Hour Occupancy History</div>
+        <div class="chart-wrap">
+          <canvas id="historyChart"></canvas>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<!-- ── FOOTER ──────────────────────────────────────────────────────────────── -->
+<footer>
+  <span>Graph-Aware Contextual Deep Learning · GATv2 + LSTM + Multi-head Attention</span>
+  <span>API: <a href="/docs" target="_blank">/docs</a></span>
+</footer>
+
+<script src="/static/app.js"></script>
+</body>
+</html>

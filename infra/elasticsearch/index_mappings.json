@@ -1,0 +1,51 @@
+{
+  "ed-predictions": {
+    "mappings": {
+      "properties": {
+        "hospital_id":          { "type": "keyword" },
+        "hospital_name":        { "type": "keyword" },
+        "dept_id":              { "type": "keyword" },
+        "dept_name":            { "type": "keyword" },
+        "dept_type":            { "type": "keyword" },
+        "prediction_timestamp": { "type": "date" },
+        "horizon_1h":           { "type": "float" },
+        "horizon_2h":           { "type": "float" },
+        "horizon_4h":           { "type": "float" },
+        "horizon_8h":           { "type": "float" },
+        "confidence":           { "type": "float" },
+        "severity_label":       { "type": "keyword" },
+        "max_congestion":       { "type": "float" },
+        "geo_location":         { "type": "geo_point" },
+        "model_version":        { "type": "keyword" }
+      }
+    }
+  },
+  "ed-alerts": {
+    "mappings": {
+      "properties": {
+        "hospital_id":    { "type": "keyword" },
+        "dept_id":        { "type": "keyword" },
+        "alert_ts":       { "type": "date" },
+        "alert_type":     { "type": "keyword" },
+        "severity":       { "type": "keyword" },
+        "threshold":      { "type": "float" },
+        "actual_value":   { "type": "float" },
+        "predicted_value":{ "type": "float" },
+        "resolved":       { "type": "boolean" }
+      }
+    }
+  },
+  "ed-events": {
+    "mappings": {
+      "properties": {
+        "event_type":    { "type": "keyword" },
+        "hospital_id":   { "type": "keyword" },
+        "dept_id":       { "type": "keyword" },
+        "patient_id":    { "type": "keyword" },
+        "acuity":        { "type": "integer" },
+        "event_ts":      { "type": "date" },
+        "los_minutes":   { "type": "float" }
+      }
+    }
+  }
+}

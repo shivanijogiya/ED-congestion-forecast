@@ -1,0 +1,38 @@
+kafka:
+  bootstrap_servers: "localhost:9092"
+  topics:
+    patient_events:  "ed.patient.events"
+    context_events:  "ed.context.events"
+    feature_windows: "ed.feature.windows"
+    predictions:     "ed.predictions"
+    alerts:          "ed.alerts"
+    dead_letter:     "ed.dead.letter"
+
+cassandra:
+  hosts:    ["localhost"]
+  port:     9042
+  keyspace: "ed_forecasting"
+  dc:       "datacenter1"
+
+elasticsearch:
+  host:    "http://localhost:9200"
+  indices:
+    predictions: "ed-predictions"
+    alerts:      "ed-alerts"
+    events:      "ed-events"
+
+spark:
+  master:                       "local[*]"
+  app_name:                     "EDForecast"
+  streaming_batch_interval_sec: 60
+  watermark_minutes:            10
+  checkpoint_path:              "/tmp/ed_checkpoint"
+
+model:
+  checkpoint_dir:  "checkpoints"
+  inference_interval_minutes: 5
+
+api:
+  host:  "0.0.0.0"
+  port:  8000
+  debug: false
