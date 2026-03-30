@@ -14,7 +14,7 @@ A **production-grade streaming Big Data system** that predicts Emergency Departm
 
 ---
 
-## 🎯 Problem Statement
+##  Problem Statement
 
 Traditional ED forecasting models have **three critical limitations**:
 
