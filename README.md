@@ -53,7 +53,7 @@ Then open **http://localhost:8000** in your browser.
 
 ---
 
-## 🖥️ Dashboard
+##  Dashboard
 
 The system ships with a full real-time web dashboard at `http://localhost:8000`:
 
