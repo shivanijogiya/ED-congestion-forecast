@@ -67,7 +67,7 @@ The system ships with a full real-time web dashboard at `http://localhost:8000`:
 
 ---
 
-## 🏗️ System Architecture
+##  System Architecture
 
 ```
 Hospital Events          External Signals
