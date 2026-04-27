@@ -28,7 +28,7 @@ Traditional ED forecasting models have **three critical limitations**:
 
 ---
 
-## 🚀 Quick Start (No Docker Needed — 60 seconds)
+##  Quick Start (No Docker Needed — 60 seconds)
 
 ### Mac / Linux
 ```bash
