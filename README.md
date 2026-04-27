@@ -365,6 +365,6 @@ MIT © 2026
 
 ---
 
-## 👤 Author
+##  Author
 
 Built as a Big Data course project demonstrating research-grade streaming ML systems.
