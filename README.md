@@ -151,7 +151,7 @@ Hospital Events          External Signals
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 ed-congestion-forecast/
