@@ -105,7 +105,7 @@ Hospital Events          External Signals
 
 ---
 
-## 🧠 Model Architecture
+##  Model Architecture
 
 ### Why this combination?
 
