@@ -133,7 +133,7 @@ Hospital Events          External Signals
 
 ---
 
-## 📦 Tech Stack
+##  Tech Stack
 
 | Layer | Technology |
 |-------|-----------|
