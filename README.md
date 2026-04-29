@@ -225,7 +225,7 @@ ed-congestion-forecast/
 ├── requirements.txt             # All Python dependencies
 ├── pyproject.toml               # Package config
 ├── Makefile                     # Dev shortcuts
-├── start.sh                     # 🚀 One-command Mac/Linux startup
+├── start.sh                     #  One-command Mac/Linux startup
 ├── start.bat                    # 🚀 One-command Windows startup
 └── main.py                      # Master entry point
 ```
