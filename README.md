@@ -156,7 +156,7 @@ Hospital Events          External Signals
 ```
 ed-congestion-forecast/
 │
-├── 📂 simulation/               # Data generators
+├──  simulation/               # Data generators
 │   ├── hospital_topology.py     # 6 hospitals, 7 depts each, graph edges
 │   ├── patient_simulator.py     # Poisson arrivals, LOS, surge events
 │   ├── external_context_simulator.py  # Weather, flu, traffic
