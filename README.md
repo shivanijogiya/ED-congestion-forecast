@@ -163,12 +163,12 @@ ed-congestion-forecast/
 │   ├── schemas.py               # Pydantic event models
 │   └── run_simulation.py        # Orchestrates all simulators → Kafka
 │
-├── 📂 kafka_layer/              # Kafka producers & consumers
+├──  kafka_layer/              # Kafka producers & consumers
 │   └── producers/
 │       ├── patient_event_producer.py
 │       └── context_event_producer.py
 │
-├── 📂 spark_processing/         # Spark Structured Streaming
+├── spark_processing/         # Spark Structured Streaming
 │   └── streaming/
 │       ├── patient_stream_processor.py   # Stateful occupancy features
 │       └── context_stream_processor.py   # Context signal aggregation
